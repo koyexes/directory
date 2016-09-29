@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import Paylater_Debtors
+from .models import Paylater_Debtor
 
 # Register your models here.
 
 class PaylaterDebtors(admin.ModelAdmin):
-    list_display = ('AccountHolderName')
+    list_display = ('AccountHolderName', 'Employer', 'TotalDue', 'Balance', 'DaysInArrears', 'MobilePhone')
+    search_fields = ['AccountHolderName', 'Employer', 'TotalDue', 'Balance', 'DaysInArrears', 'MobilePhone']
 
 
-admin.site.register(Paylater_Debtors, PaylaterDebtors)
+admin.site.register(Paylater_Debtor, PaylaterDebtors)
