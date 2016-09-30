@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.sites.models import Site
 
+admin.site.unregister(Site.objects)
 admin.site.site_header = "Debtors Administration"
+admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^debtors/', include('debtors.urls')),
