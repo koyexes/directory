@@ -1,0 +1,221 @@
+{% load staticfiles %}
+<! DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="SearchApp, SearchApp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900">
+  <link rel="stylesheet" href="{% static 'debtors/assets/et-line-font-plugin/style.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/bootstrap-material-design-font/css/material.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/tether/tether.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/bootstrap/css/bootstrap.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/socicon/css/socicon.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/animate.css/animate.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/theme/css/style.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+  
+  
+  
+</head>
+<body style="padding-top: 10px; background-color: rgb(0, 168, 133); ">
+   <div id="topFormDiv" class="col-xs-12 col-lg-10 col-lg-offset-1"  style="display: none" >
+        <form id="topForm" class="mbr-form" action="{% url 'debtors:search' %}" method="post" >
+            {% csrf_token %}
+
+            <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                {{ search_form.search }}
+                <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
+            </div>
+        </form>
+    </div>
+
+<section class="mbr-section mbr-section-hero mbr-section-full" id="index-header1-0" style="background-color: rgb(0, 168, 133); ">
+
+    
+
+    <div class="mbr-table-cell">
+
+        <div class="container">
+            <div class="row" >
+                <div id="bottomFormDiv" class="mbr-section col-md-10 col-md-offset-1 text-xs-center" >
+                   <div  class="col-xs-12 col-lg-10 col-lg-offset-1">
+                        <form id="bottomForm" class="mbr-form" action="{% url 'debtors:search' %}" method="post" >
+                            {% csrf_token %}
+
+                            <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                                <input type="text" class="form-control"  required  id="placeholder">
+                                <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                             <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
+  color: #ffffff;">
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
+                                        <p>Peter James N13,000, 234 days in arrears.</p>
+                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
+                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+
+
+
+                                        </div>
+                                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
+  color: #ffffff;">
+                                        <p>Koya Adebamo N13,000, 234 days in arrears.</p>
+                                        <p>Koya James N13,000, 234 days in arrears.</p>
+                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
+                                        <p>Koya James N13,000, 234 days in arrears.</p>
+                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
+                                        <p>Koya James N13,000, 234 days in arrears.</p>
+                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
+                                        <p>Koya James N13,000, 234 days in arrears.</p>
+                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
+                                        <p>Koya James N13,000, 234 days in arrears.</p>
+                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+
+                                        </div>
+                                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
+  color: #ffffff;">
+                                        <p>Kike Abayo N13,000, 234 days in arrears.</p>
+                                        <p>Ore James N18,000, 20 days in arrears.</p>
+                                        <p>Alfa Kuku N2,000, 23 days in arrears.</p>
+                                        <p>Abe bamoyo N53,000, 434 days in arrears.</p>
+                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</section >
+
+
+<!--
+<section class="engine"><a rel="external" href="#>App</a></section><section class="mbr-section article mbr-section__container" id="index-content7-0" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 lead">
+            <p>Koya Ada N43,000, 34 days in arrears.</p>
+            <p>Peter James N13,000, 234 days in arrears.</p>
+            <p>Femi Adeba N11,000, 44 days in arrears.</p> 
+            <p>Kola Yinka N13,000, 63 days in arrears.</p>
+            <p>Ano Offia N13,000, 234 days in arrears.</p>
+
+            </div>
+            <div class="col-xs-12 col-md-4 lead">
+            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
+            <p>Koya James N13,000, 234 days in arrears.</p>
+            <p>Henry Kanu N13,000, 234 days in arrears.</p> 
+            <p>Ano Offia N13,000, 234 days in arrears.</p>
+            <p>Ano Offia N13,000, 234 days in arrears.</p>
+
+            </div>
+            <div class="col-xs-12 col-md-4 lead">
+            <p>Kike Abayo N13,000, 234 days in arrears.</p>
+            <p>Ore James N18,000, 20 days in arrears.</p>
+            <p>Alfa Kuku N2,000, 23 days in arrears.</p> 
+            <p>Abe bamoyo N53,000, 434 days in arrears.</p>
+            <p>Ano Offia N13,000, 234 days in arrears.</p>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+-->
+
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="index-footer1-0" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+    
+    <div class="container">
+        <p class="text-xs-center">Copyright (c) 2016 Apps</p>
+    </div>
+</footer>
+
+
+
+  <script src="{% static 'debtors/assets/web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'debtors/assets/tether/tether.min.js' %}"></script>
+  <script src="{% static 'debtors/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'debtors/assets/smooth-scroll/SmoothScroll.js' %}"></script>
+  <script src="{% static 'debtors/assets/viewportChecker/jquery.viewportchecker.js' %}"></script>
+  <script src="{% static 'debtors/assets/theme/js/script.js' %}"></script>
+  <script src="{% static 'debtors/assets/formoid/formoid.min.js' %}"></script>
+<script>
+    $("#placeholder").focus(function() {
+        $('#topFormDiv').css('display', 'block');
+        $('#searchField').focus();
+        $('#bottomFormDiv').hide();
+
+    });
+</script>
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
