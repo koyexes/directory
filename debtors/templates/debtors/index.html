@@ -25,9 +25,8 @@
   
 </head>
 <body style="padding-top: 10px; background-color: rgb(0, 168, 133); ">
-   <div id="topFormDiv" class="col-xs-12 col-lg-10 col-lg-offset-1"  style="display: none" >
-        <form id="topForm" class="mbr-form" action="{% url 'debtors:search' %}" method="post" >
-            {% csrf_token %}
+   <div id="topFormDiv" class="col-xs-12 col-lg-10 col-lg-offset-1"  {% if result %} style="display: block" {% else %} style="display: none" {% endif %} >
+        <form id="topForm" class="mbr-form" action="{% url 'debtors:search' %}" method="get" >
 
             <div class="mbr-subscribe mbr-subscribe-dark input-group">
                 {{ search_form.search }}
@@ -44,13 +43,12 @@
 
         <div class="container">
             <div class="row" >
-                <div id="bottomFormDiv" class="mbr-section col-md-10 col-md-offset-1 text-xs-center" >
+                <div id="bottomFormDiv" class="mbr-section col-md-10 col-md-offset-1 text-xs-center" {% if result %} style="display: none" {% endif %} >
                    <div  class="col-xs-12 col-lg-10 col-lg-offset-1">
-                        <form id="bottomForm" class="mbr-form" action="{% url 'debtors:search' %}" method="post" >
-                            {% csrf_token %}
+                        <form id="bottomForm" class="mbr-form" action="{% url 'debtors:search' %}" method="get" >
 
                             <div class="mbr-subscribe mbr-subscribe-dark input-group">
-                                <input type="text" class="form-control"  required  id="placeholder">
+                                <input type="text" class="form-control"  required  id="placeholder" >
                                 <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
                             </div>
                         </form>
@@ -58,7 +56,7 @@
                 </div>
 
                              <div class="container">
-                                    <div class="row">
+                                    <div class="row" style="padding-top: 30px;">
                                         <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
   color: #ffffff;">
                                         <p>Koya Ada N43,000, 34 days in arrears.</p>
@@ -132,18 +130,23 @@
                                         </div>
                                         <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
   color: #ffffff;">
-                                        <p>Kike Abayo N13,000, 234 days in arrears.</p>
-                                        <p>Ore James N18,000, 20 days in arrears.</p>
-                                        <p>Alfa Kuku N2,000, 23 days in arrears.</p>
-                                        <p>Abe bamoyo N53,000, 434 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                            <p>Kike Abayo N13,000, 234 days in arrears.</p>
+                                            <p>Ore James N18,000, 20 days in arrears.</p>
+                                            <p>Alfa Kuku N2,000, 23 days in arrears.</p>
+                                            <p>Abe bamoyo N53,000, 434 days in arrears.</p>
+                                            <p>Ano Offia N13,000, 234 days in arrears.</p>
+                                            {% if flag %}
+                                                {{result}}
+                                            {% else %}
+                                                {% for data in result %}
+                                                    {{data.AccountHolderName}}
+                                                {% endfor %}
+                                            {% endif %}
+
 
                                         </div>
                                     </div>
                                 </div>
-
-
-
 
                 </div>
             </div>
@@ -154,41 +157,6 @@
 
 </section >
 
-
-<!--
-<section class="engine"><a rel="external" href="#>App</a></section><section class="mbr-section article mbr-section__container" id="index-content7-0" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4 lead">
-            <p>Koya Ada N43,000, 34 days in arrears.</p>
-            <p>Peter James N13,000, 234 days in arrears.</p>
-            <p>Femi Adeba N11,000, 44 days in arrears.</p> 
-            <p>Kola Yinka N13,000, 63 days in arrears.</p>
-            <p>Ano Offia N13,000, 234 days in arrears.</p>
-
-            </div>
-            <div class="col-xs-12 col-md-4 lead">
-            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
-            <p>Koya James N13,000, 234 days in arrears.</p>
-            <p>Henry Kanu N13,000, 234 days in arrears.</p> 
-            <p>Ano Offia N13,000, 234 days in arrears.</p>
-            <p>Ano Offia N13,000, 234 days in arrears.</p>
-
-            </div>
-            <div class="col-xs-12 col-md-4 lead">
-            <p>Kike Abayo N13,000, 234 days in arrears.</p>
-            <p>Ore James N18,000, 20 days in arrears.</p>
-            <p>Alfa Kuku N2,000, 23 days in arrears.</p> 
-            <p>Abe bamoyo N53,000, 434 days in arrears.</p>
-            <p>Ano Offia N13,000, 234 days in arrears.</p>
-
-            </div>
-        </div>
-    </div>
-
-</section>
--->
 
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="index-footer1-0" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
@@ -206,15 +174,17 @@
   <script src="{% static 'debtors/assets/viewportChecker/jquery.viewportchecker.js' %}"></script>
   <script src="{% static 'debtors/assets/theme/js/script.js' %}"></script>
   <script src="{% static 'debtors/assets/formoid/formoid.min.js' %}"></script>
-<script>
-    $("#placeholder").focus(function() {
-        $('#topFormDiv').css('display', 'block');
-        $('#searchField').focus();
-        $('#bottomFormDiv').hide();
 
-    });
-</script>
-  
+        <script>
+
+            $("#placeholder").keypress(function() {
+                $('#topFormDiv').css('display', 'block');
+                $('#searchField').focus();
+                $('#bottomFormDiv').hide();
+
+            });
+        </script>
+
   
   <input name="animation" type="hidden">
   </body>
