@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<! DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="SearchApp, SearchApp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900">
+  <link rel="stylesheet" href="{% static 'debtors/assets/et-line-font-plugin/style.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/bootstrap-material-design-font/css/material.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/tether/tether.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/bootstrap/css/bootstrap.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/socicon/css/socicon.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/animate.css/animate.min.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/theme/css/style.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/css/normalize.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/css/style.css' %}" type="text/css">
+
+  
+  
+</head>
+<body style=" background-color: rgb(0, 168, 133); padding-top: 20px; ">
+
+
+
+<section class="mbr-section mbr-section-hero mbr-section-full" id="index-header1-0" style="background-color: rgb(0, 168, 133);  ">
+
+
+    <div class="mbr-table-cell"   >
+
+        <div class="container" style="margin-top:0px;   ">
+
+            <div class="row">
+               <div id="bottomFormDiv" class="mbr-section col-md-10 col-md-offset-1 text-xs-center"  >
+                   <div  class="col-xs-12 col-lg-10 col-lg-offset-1">
+                        <form id="bottomForm" class="mbr-form" action="{% url 'debtors:search' %}" method="get" >
+
+                            <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                                {{ search_form.search }}
+                                <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
+                            </div>
+                        </form>
+                   </div>
+               </div>
+            </div>
+
+
+            <div class="row">
+                {% if no_result_flag %}
+                    <div class="col-xs-12 lead" style="font-family: 'Raleway', sans-serif;color: #ffffff; text-align: center;">
+                        <p style="font-size: 70px;">{{ result }} </p>
+                    </div>
+                {%  else %}
+                    {% for value in result %}
+                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;color: #ffffff;">
+                            {% for data in value %}
+                                <p style="height: 20px">{{ data.AccountHolderName }}  N{{ data.TotalDue }},  {{ data.DaysInArrears }} days in arrears.</p>
+                            {% endfor %}
+
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+
+        </div>
+    </div>
+
+</section >
+
+
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="index-footer1-0" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+    
+    <div class="container">
+        <p class="text-xs-center">Copyright (c) 2016 Apps</p>
+    </div>
+</footer>
+
+
+
+  <script src="{% static 'debtors/assets/web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'debtors/assets/tether/tether.min.js' %}"></script>
+  <script src="{% static 'debtors/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'debtors/assets/smooth-scroll/SmoothScroll.js' %}"></script>
+  <script src="{% static 'debtors/assets/viewportChecker/jquery.viewportchecker.js' %}"></script>
+  <script src="{% static 'debtors/assets/theme/js/script.js' %}"></script>
+  <script src="{% static 'debtors/assets/formoid/formoid.min.js' %}"></script>
+
+
+
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
