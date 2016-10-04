@@ -20,30 +20,36 @@
   <link rel="stylesheet" href="{% static 'debtors/assets/animate.css/animate.min.css' %}" type="text/css">
   <link rel="stylesheet" href="{% static 'debtors/assets/theme/css/style.css' %}" type="text/css">
   <link rel="stylesheet" href="{% static 'debtors/assets/mobirise/css/mbr-additional.css' %}" type="text/css">
-  
+  <link rel="stylesheet" href="{% static 'debtors/css/normalize.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'debtors/css/style.css' %}" type="text/css">
+
   
   
 </head>
-<body style="padding-top: 10px; background-color: rgb(0, 168, 133); ">
-   <div id="topFormDiv" class="col-xs-12 col-lg-10 col-lg-offset-1"  {% if result %} style="display: block" {% else %} style="display: none" {% endif %} >
-        <form id="topForm" class="mbr-form" action="{% url 'debtors:search' %}" method="get" >
+<body style=" background-color: rgb(0, 168, 133); padding-top: 20px; ">
 
-            <div class="mbr-subscribe mbr-subscribe-dark input-group">
-                {{ search_form.search }}
-                <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
+
+
+<section class="mbr-section mbr-section-hero mbr-section-full" id="index-header1-0" style="background-color: rgb(0, 168, 133);  ">
+
+
+    <div class="mbr-table-cell"   >
+
+        <div class="container" style="margin-top:0px;   ">
+
+            <div id="topFormDiv" class="col-xs-12 col-lg-12 col-lg-offset-0"  {% if indexFlag %} style="display: none; " {% endif %} >
+                <form id="topForm" class="mbr-form" action="{% url 'debtors:search' %}" method="get" >
+
+                    <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                        {{ search_form.search }}
+                        <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
 
-<section class="mbr-section mbr-section-hero mbr-section-full" id="index-header1-0" style="background-color: rgb(0, 168, 133); ">
 
-    
-
-    <div class="mbr-table-cell">
-
-        <div class="container">
-            <div class="row" >
-                <div id="bottomFormDiv" class="mbr-section col-md-10 col-md-offset-1 text-xs-center" {% if result %} style="display: none" {% endif %} >
+            <div class="row">
+               <div id="bottomFormDiv" class="mbr-section col-md-10 col-md-offset-1 text-xs-center" {% if not indexFlag %} style="display: none; padding: 0px;" {% endif %} >
                    <div  class="col-xs-12 col-lg-10 col-lg-offset-1">
                         <form id="bottomForm" class="mbr-form" action="{% url 'debtors:search' %}" method="get" >
 
@@ -52,108 +58,26 @@
                                 <span class="input-group-btn"><button type="submit" class="btn btn-primary">SEARCH FOR DEBTOR</button></span>
                             </div>
                         </form>
-                    </div>
-                </div>
+                   </div>
+               </div>
 
-                             <div class="container">
-                                    <div class="row" style="padding-top: 30px;">
-                                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
-  color: #ffffff;">
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Koya Ada N43,000, 34 days in arrears.</p>
-                                        <p>Peter James N13,000, 234 days in arrears.</p>
-                                        <p>Femi Adeba N11,000, 44 days in arrears.</p>
-                                        <p>Kola Yinka N13,000, 63 days in arrears.</p>
+                <div class="container" >
+                        <div class="row">
+                            {% for value in result %}
+                                <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;color: #ffffff;">
+                                    {% for data in value %}
+                                        <p style="height: 20px">{{ data.AccountHolderName }}  N{{ data.TotalDue }},  {{ data.DaysInArrears }} days in arrears.</p>
+                                    {% endfor %}
 
-
-
-                                        </div>
-                                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
-  color: #ffffff;">
-                                        <p>Koya Adebamo N13,000, 234 days in arrears.</p>
-                                        <p>Koya James N13,000, 234 days in arrears.</p>
-                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
-                                        <p>Koya James N13,000, 234 days in arrears.</p>
-                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
-                                        <p>Koya James N13,000, 234 days in arrears.</p>
-                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
-                                        <p>Koya James N13,000, 234 days in arrears.</p>
-                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                            <p>Koya Adebamo N13,000, 234 days in arrears.</p>
-                                        <p>Koya James N13,000, 234 days in arrears.</p>
-                                        <p>Henry Kanu N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                        <p>Ano Offia N13,000, 234 days in arrears.</p>
-
-                                        </div>
-                                        <div class="col-xs-12 col-md-4 lead" style="font-family: 'Raleway', sans-serif;
-  color: #ffffff;">
-                                            <p>Kike Abayo N13,000, 234 days in arrears.</p>
-                                            <p>Ore James N18,000, 20 days in arrears.</p>
-                                            <p>Alfa Kuku N2,000, 23 days in arrears.</p>
-                                            <p>Abe bamoyo N53,000, 434 days in arrears.</p>
-                                            <p>Ano Offia N13,000, 234 days in arrears.</p>
-                                            {% if flag %}
-                                                {{result}}
-                                            {% else %}
-                                                {% for data in result %}
-                                                    {{data.AccountHolderName}}
-                                                {% endfor %}
-                                            {% endif %}
-
-
-                                        </div>
-                                    </div>
                                 </div>
-
+                            {% endfor %}
+                        </div>
                 </div>
+
             </div>
+
         </div>
     </div>
-
-    
 
 </section >
 
@@ -175,15 +99,15 @@
   <script src="{% static 'debtors/assets/theme/js/script.js' %}"></script>
   <script src="{% static 'debtors/assets/formoid/formoid.min.js' %}"></script>
 
-        <script>
+    <script>
 
-            $("#placeholder").keypress(function() {
-                $('#topFormDiv').css('display', 'block');
-                $('#searchField').focus();
-                $('#bottomFormDiv').hide();
+        $("#placeholder").keypress(function() {
+            $('#topFormDiv').css('display', 'block');
+            $('#searchField').focus();
+            $('#bottomFormDiv').hide();
 
-            });
-        </script>
+        });
+    </script>
 
   
   <input name="animation" type="hidden">
